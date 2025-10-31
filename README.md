@@ -1,0 +1,135 @@
+# 🍽️ Sentiment Analysis of Restaurant Reviews Using NLP & Machine Learning
+
+This project analyzes restaurant customer feedback to classify sentiments as **Positive**, **Negative**, or **Neutral** using Natural Language Processing (NLP) and Machine Learning techniques. The model is trained on a dataset of restaurant reviews to understand how text data can be used to measure customer satisfaction.
+
+---
+
+## 📂 Dataset Details
+
+**Dataset Name:** Restaurant_Reviews.tsv  
+**Source:** Local / UCI Repository-style TSV file  
+**Total Records:** 1,000 reviews  
+**Columns:**
+- **Review** – Text review given by customers.  
+- **Liked** – Target variable:  
+  - `1` → Positive Review  
+  - `0` → Negative Review  
+
+---
+
+## ⚙️ Workflow Overview
+
+### **1️⃣ Data Loading and Inspection**
+- Imported the dataset using **Pandas**.  
+- Checked dataset dimensions, null values, and distribution of the `Liked` variable.  
+- Added new text-based features:
+  - Character count
+  - Word count
+  - Sentence count (using NLTK’s `sent_tokenize`)
+
+---
+
+### **2️⃣ Text Preprocessing (NLP Pipeline)**
+Steps applied to clean and normalize the text data:
+
+| Step | Description |
+|------|--------------|
+| **1. Regex Cleaning** | Removed all non-alphabetic characters. |
+| **2. Lowercasing** | Converted all text to lowercase. |
+| **3. Tokenization** | Split text into individual words. |
+| **4. Stopword Removal** | Used NLTK stopwords, retaining important negations like "not", "no". |
+| **5. Stemming** | Used PorterStemmer to reduce words to root forms. |
+| **6. Corpus Creation** | Compiled all processed text into a clean corpus for model training. |
+
+---
+
+### **3️⃣ Data Visualization**
+
+#### 🟢 WordCloud for Positive Reviews
+A WordCloud was generated to visualize the most frequent positive words, highlighting terms like:
+> *"love", "amazing", "great", "delicious", "excellent"*
+
+#### 🔴 WordCloud for Negative Reviews
+Shows common negative expressions such as:
+> *"bad", "worst", "disappointed", "slow", "terrible"*
+
+*(Visuals generated using the `WordCloud` library and Matplotlib.)*
+
+---
+
+### **4️⃣ Feature Extraction**
+
+Used **CountVectorizer** to convert text corpus into numerical features:
+- Limited to the **1500 most frequent words** to reduce sparsity.
+- Transformed the processed text into a matrix form suitable for ML algorithms.
+
+```python
+from sklearn.feature_extraction.text import CountVectorizer
+---
+5️⃣ Model Development
+
+Split data into 80% training and 20% testing.
+
+Experimented with multiple classification algorithms (as seen in the notebook, e.g. Naive Bayes, Logistic Regression, etc.).
+
+Evaluated models using accuracy score, confusion matrix, and classification report.
+
+Example:
+
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=42)
+cv = CountVectorizer(max_features=1500)
+X = cv.fit_transform(Corpus).toarray()
+---
+6️⃣ Model Evaluation Metrics
+
+Typical metrics considered:
+
+| Metric        | Description                          |
+| ------------- | ------------------------------------ |
+| **Accuracy**  | Overall correctness of predictions   |
+| **Precision** | Positive prediction reliability      |
+| **Recall**    | Coverage of actual positives         |
+| **F1-Score**  | Balance between Precision and Recall |
+📊 Key Insights
+
+Positive reviews generally contain more characters and words than negative ones.
+
+Negation words (like “not good”) play a key role in accurate sentiment detection.
+
+The pre-trained model achieved high accuracy (depending on classifier used).
+---
+| Category             | Libraries                 |
+| -------------------- | ------------------------- |
+| **Data Handling**    | `pandas`, `numpy`         |
+| **Visualization**    | `matplotlib`, `wordcloud` |
+| **NLP Processing**   | `nltk`, `re`              |
+| **Machine Learning** | `scikit-learn`            |
+---
+| Visualization                                        | Description                            |
+| ---------------------------------------------------- | -------------------------------------- |
+| ![Positive WordCloud](assets/wordcloud_positive.png) | Highlights words from positive reviews |
+| ![Negative WordCloud](assets/wordcloud_negative.png) | Highlights words from negative reviews |
+---
+🚀 Future Enhancements
+
+Implement TF-IDF Vectorization for better feature weighting.
+
+Deploy model using Streamlit or Flask for real-time sentiment analysis.
+
+Use deep learning (LSTM / BERT) for improved contextual understanding.
+---
+🧑‍💻 Author
+
+Divyanshu Dharmik
+B.Tech 2022 | Machine Learning & Data Science Enthusiast
+---
+🏁 Conclusion
+
+This project successfully demonstrates how NLP techniques combined with machine learning can extract meaningful insights from textual customer feedback, helping restaurants improve their services based on customer sentiment.
+
+---
+Would you like me to:
+✅ generate this as a downloadable `README.md` file  
+and  
+✅ suggest a short project abstract (IEEE-style) for your practical report? ​:contentReference[oaicite:0]{index=0}​
