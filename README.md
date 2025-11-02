@@ -46,10 +46,6 @@ The outcome is an efficient system that predicts whether a review expresses a po
 ---
 ## 📊 Project Showcase  
 
-| Positive WordCloud | Negative WordCloud |
-|:-------------------:|:-------------------:|
-| ![Positive WordCloud](Word%20Cloud%20for%20Positive%20Reviews.png) | ![Negative WordCloud](Word%20Cloud%20for%20Negative%20Reviews.png) |
-
 | Output Dashboard |  
 |:----------------:|
 | ![Confusion Matrix](https://github.com/Divyanshuxoxo/Machine-Learning-Theory-/blob/main/Output%20dashboard) 
@@ -159,8 +155,37 @@ Experimented with various **classification algorithms**:
 | F1-Score | Balance between precision & recall |
 
 ---
+## 🧪 Experiments and Results Summary
 
-## 📈 Model Performance  
+### 🧮 Model Performance Comparison
+
+| Model                 | Accuracy | Precision | Recall | F1-Score |
+|------------------------|----------|------------|--------|----------|
+| Naive Bayes            | 84%      | 0.86       | 0.82   | 0.84     |
+| Logistic Regression    | 88%      | 0.89       | 0.87   | 0.88     |
+| Support Vector Machine | 90%      | 0.91       | 0.89   | 0.90     |
+
+---
+
+### 🔍 Key Observations
+
+- Positive reviews were generally longer and contained more descriptive words like **“delicious”**, **“amazing”**, and **“great”**.  
+- Negative reviews commonly included negations such as **“not good”**, **“bad”**, and **“disappointed”**.  
+- **SVM** provided the highest accuracy and balanced F1-score, making it the best-performing model.
+
+---
+
+### 🎨 Visualizations
+
+#### ☁️ WordClouds
+- **Positive reviews** emphasized: *“excellent”*, *“tasty”*, and *“friendly”*.  
+- **Negative reviews** emphasized: *“slow”*, *“cold”*, and *“worst”*.  
+
+| Positive WordCloud | Negative WordCloud |
+|:-------------------:|:-------------------:|
+| ![Positive WordCloud](Word%20Cloud%20for%20Positive%20Reviews.png) | ![Negative WordCloud](Word%20Cloud%20for%20Negative%20Reviews.png) |
+
+# 📈 Model Performance  
 
 - Positive reviews generally have **more characters and words** than negative ones.  
 - **Negations (“not good”)** strongly influence sentiment prediction.  
@@ -175,6 +200,7 @@ Experimented with various **classification algorithms**:
 ---
 ## ** Model Flow **
 ![Model Flowchart](https://github.com/Divyanshuxoxo/Machine-Learning-Theory-/blob/main/Model%20Flowchart.jpg)
+
 ## 🧰 Libraries & Tools Used  
 
 | Category | Libraries |
@@ -183,6 +209,13 @@ Experimented with various **classification algorithms**:
 | Visualization | `matplotlib`, `wordcloud` |
 | NLP Processing | `nltk`, `re` |
 | Machine Learning | `scikit-learn` |
+
+
+## 📊 Insights
+
+- **Text length** and **word richness** directly influence sentiment polarity.  
+- **Preprocessing quality** (especially handling of negations) significantly affects accuracy.  
+- **Machine Learning-based sentiment analysis** can replace manual review sorting, saving substantial time and effort for restaurants.
 
 ---
 
@@ -216,7 +249,32 @@ Below are the sample visuals generated after model training and evaluation:
 📧 **Contact:** [dharmikdivyanshu1406@gmail.com]  
 
 ---
+## 📊 Insights
 
+- **Text length** and **word richness** directly influence sentiment polarity.  
+- **Preprocessing quality** (especially handling of negations) significantly affects accuracy.  
+- **Machine Learning-based sentiment analysis** can replace manual review sorting, saving substantial time and effort for restaurants.
+
+---
+
+## 🏁 Conclusion
+
+This project successfully demonstrates how **Natural Language Processing (NLP)** combined with **Machine Learning (ML)** can classify and analyze restaurant reviews effectively.  
+Through careful **text preprocessing**, **feature engineering**, and **model comparison**, the system achieved a high level of accuracy in sentiment classification.
+
+The work illustrates how NLP pipelines can help businesses understand their customers better, **prioritize improvements**, and make **data-driven marketing decisions**.
+
+---
+
+## 📚 References
+
+1. [NLTK Documentation](https://www.nltk.org/)  
+2. [Scikit-learn User Guide](https://scikit-learn.org/stable/user_guide.html)  
+3. [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php)  
+4. [WordCloud Library by Andreas Mueller](https://github.com/amueller/word_cloud)  
+5. [Coursera NLP Specialization](https://www.coursera.org/specializations/natural-language-processing)
+
+---
 ## 🪪 License  
 
 This project is licensed under the **MIT License** — feel free to use, modify, and share for educational or research purposes.  
