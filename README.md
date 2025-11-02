@@ -1,5 +1,5 @@
 # 🍽️ Sentiment Analysis of Restaurant Reviews Using NLP & Machine Learning
-# 📧 AI Real-Time Spam Email Detector
+
 ![Python](https://img.shields.io/badge/Python-3.9+-blue?style=flat-square&logo=python)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)
 ![Platform](https://img.shields.io/badge/Platform-Jupyter%20Notebook-orange?style=flat-square)
