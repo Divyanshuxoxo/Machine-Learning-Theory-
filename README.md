@@ -115,7 +115,7 @@ Experimented with various **classification algorithms**:
 ![Accuracy Graph](Accuracy%20Graph.png)
 
 ---
-## Model Flow**
+## ** Model Flow **
 ![Model Flowchart](https://github.com/Divyanshuxoxo/Machine-Learning-Theory-/blob/main/Model%20Flowchart.jpg)
 ## 🧰 Libraries & Tools Used  
 
