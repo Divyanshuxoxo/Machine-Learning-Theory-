@@ -18,9 +18,9 @@ The aim is to understand how text data can be leveraged to measure **customer sa
 |:-------------------:|:-------------------:|
 | ![Positive WordCloud](Word%20Cloud%20for%20Positive%20Reviews.png) | ![Negative WordCloud](Word%20Cloud%20for%20Negative%20Reviews.png) |
 
-| Confusion Matrix | Accuracy Graph |
-|:----------------:|:----------------:|
-| ![Confusion Matrix](Confusion%20Matrix.png) | ![Accuracy Graph](Accuracy%20Graph.png) |
+| Output Dashboard |  
+|:----------------:|
+| ![Confusion Matrix](https://github.com/Divyanshuxoxo/Machine-Learning-Theory-/blob/main/Output%20dashboard) 
 
 🎥 **Output Dashboard Video:**  
 [![Output Dashboard](https://img.shields.io/badge/▶️%20Watch-Demo-blue)](ML%20DD.mp4)  
@@ -154,7 +154,7 @@ Below are the sample visuals generated after model training and evaluation:
 🎓 *B.Tech 2022 | Machine Learning & Data Science Enthusiast*  
 💡 *Focused on NLP, AI, and real-world model deployment.*  
 
-📧 **Contact:** [LinkedIn Profile or Email if preferred]  
+📧 **Contact:** [dharmikdivyanshu1406@gmail.com]  
 
 ---
 
