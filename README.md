@@ -115,7 +115,8 @@ Experimented with various **classification algorithms**:
 ![Accuracy Graph](Accuracy%20Graph.png)
 
 ---
-
+## Model Flow**
+[Model Flowchart](https://github.com/Divyanshuxoxo/Machine-Learning-Theory-/blob/main/Model%20Flowchart.jpg)
 ## 🧰 Libraries & Tools Used  
 
 | Category | Libraries |
@@ -148,9 +149,9 @@ Below are the sample visuals generated after model training and evaluation:
 
 ---
 
-## 🧑‍💻 Author  
+## 🧑‍💻 Author  **
 
-**Divyanshu Dharmik**  
+**Divyanshu Dharmik** 
 🎓 *B.Tech 2022 | Machine Learning & Data Science Enthusiast*  
 💡 *Focused on NLP, AI, and real-world model deployment.*  
 
