@@ -249,13 +249,6 @@ Below are the sample visuals generated after model training and evaluation:
 📧 **Contact:** [dharmikdivyanshu1406@gmail.com]  
 
 ---
-## 📊 Insights
-
-- **Text length** and **word richness** directly influence sentiment polarity.  
-- **Preprocessing quality** (especially handling of negations) significantly affects accuracy.  
-- **Machine Learning-based sentiment analysis** can replace manual review sorting, saving substantial time and effort for restaurants.
-
----
 
 ## 🏁 Conclusion
 
