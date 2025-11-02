@@ -6,151 +6,162 @@
 ![Status](https://img.shields.io/badge/Status-Complete-brightgreen?style=flat-square)
 
 
-This project analyzes restaurant customer feedback to classify sentiments as **Positive**, **Negative**, or **Neutral** using Natural Language Processing (NLP) and Machine Learning techniques. The model is trained on a dataset of restaurant reviews to understand how text data can be used to measure customer satisfaction.
+This project analyzes **restaurant customer feedback** to classify sentiments as **Positive**, **Negative**, or **Neutral** using **Natural Language Processing (NLP)** and **Machine Learning** techniques.  
+
+The aim is to understand how text data can be leveraged to measure **customer satisfaction** and improve restaurant services through intelligent feedback analysis.  
 
 ---
 
-## 📂 Dataset Details
+## 📊 Project Showcase  
 
-**Dataset Name:** Restaurant_Reviews.tsv  
-**Source:** Local / UCI Repository-style TSV file  
-**Total Records:** 1,000 reviews  
-**Columns:**
-- **Review** – Text review given by customers.  
-- **Liked** – Target variable:  
-  - `1` → Positive Review  
-  - `0` → Negative Review  
+| Positive WordCloud | Negative WordCloud |
+|:-------------------:|:-------------------:|
+| ![Positive WordCloud](Word%20Cloud%20for%20Positive%20Reviews.png) | ![Negative WordCloud](Word%20Cloud%20for%20Negative%20Reviews.png) |
 
----
+| Confusion Matrix | Accuracy Graph |
+|:----------------:|:----------------:|
+| ![Confusion Matrix](Confusion%20Matrix.png) | ![Accuracy Graph](Accuracy%20Graph.png) |
 
-## ⚙️ Workflow Overview
-
-### **1️⃣ Data Loading and Inspection**
-- Imported the dataset using **Pandas**.  
-- Checked dataset dimensions, null values, and distribution of the `Liked` variable.  
-- Added new text-based features:
-  - Character count
-  - Word count
-  - Sentence count (using NLTK’s `sent_tokenize`)
+🎥 **Output Dashboard Video:**  
+[![Output Dashboard](https://img.shields.io/badge/▶️%20Watch-Demo-blue)](ML%20DD.mp4)  
+*(Click the button above to view model demo video)*  
 
 ---
 
-### **2️⃣ Text Preprocessing (NLP Pipeline)**
-Steps applied to clean and normalize the text data:
+## 📂 Dataset Details  
+
+- **Dataset Name:** `Restaurant_Reviews.tsv`  
+- **Source:** Local / UCI Repository-style TSV file  
+- **Total Records:** 1,000 restaurant reviews  
+
+### 🧾 Columns  
+| Column | Description |
+|--------|--------------|
+| `Review` | Text review given by customers |
+| `Liked` | Target variable — `1 → Positive`, `0 → Negative` |
+
+---
+
+## ⚙️ Workflow Overview  
+
+### 1️⃣ Data Loading and Inspection  
+- Loaded dataset using **Pandas**  
+- Checked for null values and class distribution  
+- Added new text-based features like:
+  - **Character Count**
+  - **Word Count**
+  - **Sentence Count** (via NLTK `sent_tokenize`)
+
+---
+
+### 2️⃣ Text Preprocessing (NLP Pipeline)  
 
 | Step | Description |
 |------|--------------|
-| **1. Regex Cleaning** | Removed all non-alphabetic characters. |
-| **2. Lowercasing** | Converted all text to lowercase. |
-| **3. Tokenization** | Split text into individual words. |
-| **4. Stopword Removal** | Used NLTK stopwords, retaining important negations like "not", "no". |
-| **5. Stemming** | Used PorterStemmer to reduce words to root forms. |
-| **6. Corpus Creation** | Compiled all processed text into a clean corpus for model training. |
+| **Regex Cleaning** | Removed non-alphabetic characters using Regular Expressions |
+| **Lowercasing** | Converted text to lowercase |
+| **Tokenization** | Split text into words |
+| **Stopword Removal** | Removed stopwords but kept negations (e.g., “not”, “no”) |
+| **Stemming** | Used PorterStemmer to reduce words to root forms |
+| **Corpus Creation** | Compiled all processed text for model training |
 
 ---
 
-### **3️⃣ Data Visualization**
+### 3️⃣ Data Visualization  
 
-#### 🟢 WordCloud for Positive Reviews
-A WordCloud was generated to visualize the most frequent positive words, highlighting terms like:
-> *"love", "amazing", "great", "delicious", "excellent"*
+- **Positive Review WordCloud:** Shows frequent positive expressions like *love*, *amazing*, *delicious*, *great*, *excellent*.  
+- **Negative Review WordCloud:** Highlights negative expressions like *bad*, *worst*, *disappointed*, *slow*, *terrible*.  
 
-#### 🔴 WordCloud for Negative Reviews
-Shows common negative expressions such as:
-> *"bad", "worst", "disappointed", "slow", "terrible"*
-
-*(Visuals generated using the `WordCloud` library and Matplotlib.)*
+> Generated using `wordcloud` and `matplotlib` libraries.  
 
 ---
 
-### **4️⃣ Feature Extraction**
+### 4️⃣ Feature Extraction  
 
-Used **CountVectorizer** to convert text corpus into numerical features:
-- Limited to the **1500 most frequent words** to reduce sparsity.
-- Transformed the processed text into a matrix form suitable for ML algorithms.
+- Used **CountVectorizer** to convert text into numerical features.  
+- Limited vocabulary to **1,500 most frequent words** to reduce sparsity.  
+- Split data into **80% training** and **20% testing** sets.  
 
 ---
-### **4️⃣ Feature Extraction**
 
--Split data into 80% training and 20% testing.
+### 5️⃣ Model Training & Evaluation  
 
--Experimented with multiple classification algorithms (as seen in the notebook, e.g. Naive Bayes, Logistic Regression, etc.).
+Experimented with various **classification algorithms**:  
+- Naive Bayes (MultinomialNB)  
+- Logistic Regression  
+- Decision Tree  
+- Random Forest  
 
--Evaluated models using accuracy score, confusion matrix, and classification report.
+**Evaluation Metrics:**  
+| Metric | Description |
+|--------|--------------|
+| Accuracy | Overall model performance |
+| Precision | Correctness of positive predictions |
+| Recall | Model’s ability to detect positives |
+| F1-Score | Balance between precision & recall |
+
 ---
-### **6️⃣ Model Evaluation Metrics**
 
-**Typical metrics considered:**
+## 📈 Model Performance  
 
-| Metric        | Description                          |
-| ------------- | ------------------------------------ |
-| **Accuracy**  | Overall correctness of predictions   |
-| **Precision** | Positive prediction reliability      |
-| **Recall**    | Coverage of actual positives         |
-| **F1-Score**  | Balance between Precision and Recall |
+- Positive reviews generally have **more characters and words** than negative ones.  
+- **Negations (“not good”)** strongly influence sentiment prediction.  
+- Achieved **high accuracy** (varies by algorithm).  
 
-### **📊 Key Insights**
+**Confusion Matrix Example:**  
+![Confusion Matrix](Confusion%20Matrix.png)
 
--Positive reviews generally contain more characters and words than negative ones.
+**Accuracy Visualization:**  
+![Accuracy Graph](Accuracy%20Graph.png)
 
--Negation words (like “not good”) play a key role in accurate sentiment detection.
-
-The pre-trained model achieved high accuracy (depending on classifier used).
 ---
-| Category             | Libraries                 |
-| -------------------- | ------------------------- |
-| **Data Handling**    | `pandas`, `numpy`         |
-| **Visualization**    | `matplotlib`, `wordcloud` |
-| **NLP Processing**   | `nltk`, `re`              |
-| **Machine Learning** | `scikit-learn`            |
+
+## 🧰 Libraries & Tools Used  
+
+| Category | Libraries |
+|-----------|------------|
+| Data Handling | `pandas`, `numpy` |
+| Visualization | `matplotlib`, `wordcloud` |
+| NLP Processing | `nltk`, `re` |
+| Machine Learning | `scikit-learn` |
+
 ---
-| Visualization                                        | Description                            |
-| ---------------------------------------------------- | -------------------------------------- |
-| ![Positive WordCloud](assets/wordcloud_positive.png) | Highlights words from positive reviews |
-| ![Negative WordCloud](assets/wordcloud_negative.png) | Highlights words from negative reviews |
+
+## 🚀 Future Enhancements  
+
+- 🔹 Implement **TF-IDF Vectorization** for weighted feature extraction.  
+- 🔹 Deploy using **Streamlit** or **Flask** for interactive real-time sentiment analysis.  
+- 🔹 Use **Deep Learning** models like **LSTM** or **BERT** for contextual sentiment understanding.  
+
 ---
-### **🚀 Future Enhancements**
 
--Implement TF-IDF Vectorization for better feature weighting.
+## 🖥️ Output Dashboard  
 
--Deploy model using Streamlit or Flask for real-time sentiment analysis.
+Below are the sample visuals generated after model training and evaluation:  
 
-Use deep learning (LSTM / BERT) for improved contextual understanding.
+| Visualization | Description |
+|---------------|-------------|
+| **Positive WordCloud** | Highlights words commonly used in positive reviews |
+| **Negative WordCloud** | Shows most used words in negative feedback |
+| **Confusion Matrix** | Displays true vs predicted classifications |
+| **Accuracy Graph** | Compares performance of multiple classifiers |
+
 ---
-🧑‍💻 Author
 
-Divyanshu Dharmik
-B.Tech 2022 | Machine Learning & Data Science Enthusiast
+## 🧑‍💻 Author  
+
+**Divyanshu Dharmik**  
+🎓 *B.Tech 2022 | Machine Learning & Data Science Enthusiast*  
+💡 *Focused on NLP, AI, and real-world model deployment.*  
+
+📧 **Contact:** [LinkedIn Profile or Email if preferred]  
+
 ---
-🏁 Conclusion
 
-This project successfully demonstrates how NLP techniques combined with machine learning can extract meaningful insights from textual customer feedback, helping restaurants improve their services based on customer sentiment.
+## 🪪 License  
 
-## 🎬 How to Run
+This project is licensed under the **MIT License** — feel free to use, modify, and share for educational or research purposes.  
 
-1. **Clone this repo**
-   ```bash
-   git clone https://github.com/yourusername/AI-SPAM-Detector.git
-   cd AI-SPAM-Detector
-2. Open the notebook
-Run AISPAM_detect.ipynb in Jupyter or Google Colab
-Upload the dataset
-Upload spam.csv when prompted
-Try predictions
-Enter any review message in the UI box and click “Predict”
+---
 
-### **📷 Screenshots**
-- Spam detector interface
-- Final UI img of our Project: 
-![Screenshot 2025-04-17 065516](https://github.com/user-attachments/assets/5a02d118-c6e5-448c-8b83-311be95188b2)
-![Screenshot 2025-04-17 065616](https://github.com/user-attachments/assets/304e8edc-6b3b-4064-99e5-83c3bb434c34)
-
-
-- Accuracy scores
-![image](https://github.com/user-attachments/assets/65aecb04-b1d2-4f53-99b8-20195ac4b60a)
-
-- Confusion matrix plot
-![image](https://github.com/user-attachments/assets/18e08afe-e1d2-44f6-b274-96f4cedbf0d0)
-
-🤝 Contributions
-Contributions are welcome! Feel free to fork, clone, and submit pull requests.
+### ⭐ Don’t forget to star this repository if you found it helpful!
