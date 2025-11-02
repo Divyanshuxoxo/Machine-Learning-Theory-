@@ -116,7 +116,7 @@ Experimented with various **classification algorithms**:
 
 ---
 ## Model Flow**
-[Model Flowchart](https://github.com/Divyanshuxoxo/Machine-Learning-Theory-/blob/main/Model%20Flowchart.jpg)
+![Model Flowchart](https://github.com/Divyanshuxoxo/Machine-Learning-Theory-/blob/main/Model%20Flowchart.jpg)
 ## 🧰 Libraries & Tools Used  
 
 | Category | Libraries |
