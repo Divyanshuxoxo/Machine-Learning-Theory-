@@ -69,27 +69,18 @@ Used **CountVectorizer** to convert text corpus into numerical features:
 - Limited to the **1500 most frequent words** to reduce sparsity.
 - Transformed the processed text into a matrix form suitable for ML algorithms.
 
-```python
-from sklearn.feature_extraction.text import CountVectorizer
 ---
-5️⃣ Model Development
+### **4️⃣ Feature Extraction**
 
-Split data into 80% training and 20% testing.
+-Split data into 80% training and 20% testing.
 
-Experimented with multiple classification algorithms (as seen in the notebook, e.g. Naive Bayes, Logistic Regression, etc.).
+-Experimented with multiple classification algorithms (as seen in the notebook, e.g. Naive Bayes, Logistic Regression, etc.).
 
-Evaluated models using accuracy score, confusion matrix, and classification report.
-
-Example:
-
-from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=42)
-cv = CountVectorizer(max_features=1500)
-X = cv.fit_transform(Corpus).toarray()
+-Evaluated models using accuracy score, confusion matrix, and classification report.
 ---
-6️⃣ Model Evaluation Metrics
+### **6️⃣ Model Evaluation Metrics**
 
-Typical metrics considered:
+**Typical metrics considered:**
 
 | Metric        | Description                          |
 | ------------- | ------------------------------------ |
@@ -97,11 +88,12 @@ Typical metrics considered:
 | **Precision** | Positive prediction reliability      |
 | **Recall**    | Coverage of actual positives         |
 | **F1-Score**  | Balance between Precision and Recall |
-📊 Key Insights
 
-Positive reviews generally contain more characters and words than negative ones.
+### **📊 Key Insights**
 
-Negation words (like “not good”) play a key role in accurate sentiment detection.
+-Positive reviews generally contain more characters and words than negative ones.
+
+-Negation words (like “not good”) play a key role in accurate sentiment detection.
 
 The pre-trained model achieved high accuracy (depending on classifier used).
 ---
@@ -117,11 +109,11 @@ The pre-trained model achieved high accuracy (depending on classifier used).
 | ![Positive WordCloud](assets/wordcloud_positive.png) | Highlights words from positive reviews |
 | ![Negative WordCloud](assets/wordcloud_negative.png) | Highlights words from negative reviews |
 ---
-🚀 Future Enhancements
+### **🚀 Future Enhancements**
 
-Implement TF-IDF Vectorization for better feature weighting.
+-Implement TF-IDF Vectorization for better feature weighting.
 
-Deploy model using Streamlit or Flask for real-time sentiment analysis.
+-Deploy model using Streamlit or Flask for real-time sentiment analysis.
 
 Use deep learning (LSTM / BERT) for improved contextual understanding.
 ---
@@ -134,8 +126,31 @@ B.Tech 2022 | Machine Learning & Data Science Enthusiast
 
 This project successfully demonstrates how NLP techniques combined with machine learning can extract meaningful insights from textual customer feedback, helping restaurants improve their services based on customer sentiment.
 
----
-Would you like me to:
-✅ generate this as a downloadable `README.md` file  
-and  
-✅ suggest a short project abstract (IEEE-style) for your practical report? ​:contentReference[oaicite:0]{index=0}​
+## 🎬 How to Run
+
+1. **Clone this repo**
+   ```bash
+   git clone https://github.com/yourusername/AI-SPAM-Detector.git
+   cd AI-SPAM-Detector
+2. Open the notebook
+Run AISPAM_detect.ipynb in Jupyter or Google Colab
+Upload the dataset
+Upload spam.csv when prompted
+Try predictions
+Enter any review message in the UI box and click “Predict”
+
+### **📷 Screenshots**
+- Spam detector interface
+- Final UI img of our Project: 
+![Screenshot 2025-04-17 065516](https://github.com/user-attachments/assets/5a02d118-c6e5-448c-8b83-311be95188b2)
+![Screenshot 2025-04-17 065616](https://github.com/user-attachments/assets/304e8edc-6b3b-4064-99e5-83c3bb434c34)
+
+
+- Accuracy scores
+![image](https://github.com/user-attachments/assets/65aecb04-b1d2-4f53-99b8-20195ac4b60a)
+
+- Confusion matrix plot
+![image](https://github.com/user-attachments/assets/18e08afe-e1d2-44f6-b274-96f4cedbf0d0)
+
+🤝 Contributions
+Contributions are welcome! Feel free to fork, clone, and submit pull requests.
