@@ -5,13 +5,45 @@
 ![Platform](https://img.shields.io/badge/Platform-Jupyter%20Notebook-orange?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Complete-brightgreen?style=flat-square)
 
+## 🔍 Abstract
+This project focuses on analyzing restaurant customer feedback using **Natural Language Processing (NLP)** and **Machine Learning (ML)** techniques to classify sentiments as **Positive**, **Negative**, or **Neutral**.  
+The motivation behind this work lies in helping restaurants better understand their customers’ emotions, experiences, and opinions through text analysis.  
 
+Sentiment analysis enables automated opinion mining, providing valuable insights that can improve decision-making and enhance customer satisfaction. The project demonstrates a full NLP pipeline — text cleaning, tokenization, feature extraction, and sentiment classification using supervised learning algorithms.  
+
+The model achieved strong accuracy and interpretability, showing how linguistic patterns like negations and adjectives significantly impact polarity detection.  
+Ultimately, this project highlights the power of NLP and ML to analyze human language, revealing actionable business intelligence for the hospitality industry.
 This project analyzes **restaurant customer feedback** to classify sentiments as **Positive**, **Negative**, or **Neutral** using **Natural Language Processing (NLP)** and **Machine Learning** techniques.  
 
 The aim is to understand how text data can be leveraged to measure **customer satisfaction** and improve restaurant services through intelligent feedback analysis.  
 
 ---
+## 📂 Dataset Details  
 
+- **Dataset Name:** `Restaurant_Reviews.tsv`  
+- **Source:** Local / UCI Repository-style TSV file  
+- **Total Records:** 1,000 restaurant reviews  
+
+### 🧾 Columns  
+| Column | Description |
+|--------|--------------|
+| `Review` | Text review given by customers |
+| `Liked` | Target variable — `1 → Positive`, `0 → Negative` |
+
+---
+## 📘 Project Overview
+Restaurants and food services rely heavily on customer feedback to assess service quality and customer satisfaction. However, manually analyzing thousands of reviews is impractical.  
+This project automates that process by applying **machine learning models to analyze restaurant reviews** and predict customer sentiment.
+
+The project covers:
+- Preprocessing raw text data  
+- Converting text into numerical representations  
+- Training ML classifiers  
+- Evaluating and comparing model performance  
+- Visualizing frequently used positive and negative words  
+
+The outcome is an efficient system that predicts whether a review expresses a positive or negative sentiment, enabling data-driven business insights.
+---
 ## 📊 Project Showcase  
 
 | Positive WordCloud | Negative WordCloud |
@@ -27,18 +59,44 @@ The aim is to understand how text data can be leveraged to measure **customer sa
 *(Click the button above to view model demo video)*  
 
 ---
+### 🧹 Preprocessing and Data Treatment
+Before model training, data underwent several cleaning and normalization steps:
+- Removed **missing and duplicate entries**.  
+- Applied **regular expressions** to eliminate non-alphabetic characters.  
+- Converted all text to **lowercase** for uniformity.  
+- Used **NLTK stopwords** (excluding negations like “not”, “no”).  
+- Performed **tokenization** to split text into words.  
+- Applied **stemming** using `PorterStemmer` to reduce words to their root forms.  
+- Created a **clean corpus** to represent all processed text reviews.  
 
-## 📂 Dataset Details  
+These preprocessing steps ensured that the model could focus on meaningful patterns while ignoring irrelevant noise from punctuation or case variations.
 
-- **Dataset Name:** `Restaurant_Reviews.tsv`  
-- **Source:** Local / UCI Repository-style TSV file  
-- **Total Records:** 1,000 restaurant reviews  
+---
 
-### 🧾 Columns  
-| Column | Description |
-|--------|--------------|
-| `Review` | Text review given by customers |
-| `Liked` | Target variable — `1 → Positive`, `0 → Negative` |
+## 🧠 Methodology
+
+The following methodological framework was used to develop the sentiment classifier:
+
+1. **Data Collection**  
+   - Imported and inspected the dataset using **Pandas** to check for missing values and understand label distribution.
+
+2. **Data Preprocessing**  
+   - Cleaned the text data using **Regex**, **lowercasing**, **stopword removal**, and **stemming** to prepare a structured corpus.
+
+3. **Feature Extraction**  
+   - Transformed the text into numerical vectors using **CountVectorizer**.  
+   - Selected the top 1,500 frequent words to reduce dimensionality and improve efficiency.
+
+4. **Model Training**  
+   - Used classification models such as **Naive Bayes**, **Logistic Regression**, and **Support Vector Machine (SVM)** for sentiment prediction.
+
+5. **Model Evaluation**  
+   - Compared performance using metrics like **Accuracy**, **Precision**, **Recall**, and **F1-Score**.  
+   - Visualized results using confusion matrices.
+
+6. **Visualization & Interpretation**  
+   - Generated **WordClouds** for both positive and negative reviews.  
+   - Identified common sentiment terms and explored their relationships to labels.
 
 ---
 
