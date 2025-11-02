@@ -23,7 +23,7 @@ The aim is to understand how text data can be leveraged to measure **customer sa
 | ![Confusion Matrix](https://github.com/Divyanshuxoxo/Machine-Learning-Theory-/blob/main/Output%20dashboard) 
 
 🎥 **Output Dashboard Video:**  
-[![Output Dashboard]([https://img.shields.io/badge/▶️%20Watch-Demo-blue)](ML%20DD.mp4](https://github.com/Divyanshuxoxo/Machine-Learning-Theory-/blob/main/Output%20genration.mp4))  
+[![Output Dashboard](https://github.com/Divyanshuxoxo/Machine-Learning-Theory-/blob/main/Output%20genration.mp4))  
 *(Click the button above to view model demo video)*  
 
 ---
